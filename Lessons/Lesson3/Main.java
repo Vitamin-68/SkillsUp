@@ -1,6 +1,8 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        Person person1 = new Person("Vova", 18, 157, 65, true );
+        Person person1 = new Person("Vova", 18, 157, 65, true);
         System.out.println(person1.toString());
 
         person1.name = "Vova";
@@ -14,10 +16,10 @@ public class Main {
         Person person2 = new Person();
 
 
-//        Scanner scanner = new Scanner(System.in);
-//        String text = scanner.nextLine();
-//        System.out.println(text);
-//        int number = scanner.nextInt();
+        Scanner scanner = new Scanner(System.in);
+        String text = scanner.nextLine();
+        System.out.println(text);
+        int number = scanner.nextInt();
 //        if (scanner.hasNextInt()) {
 //           number = scanner.nextInt();
 //        System.out.println("Your number is " + number);
@@ -43,15 +45,15 @@ public class Main {
 //        System.out.println(getBiggestName(number));
 //
 //    }
-//    public static String getBiggestName (int number){
-////        String name = "less";
-//        if (number > 50) {
-//            return "Biggest";
-//        } else {
-//            return "less";
+//        public static String getBiggestName ( int number){
+//        String name = "less";
+//            if (number > 50) {
+//                return "Biggest";
+//            } else {
+//                return "less";
+//            }
+//        return name;
 //        }
-////        return name;
-//    }
 //
 //
 //    public static String getNameOfSeason (int numberOfSeason){
