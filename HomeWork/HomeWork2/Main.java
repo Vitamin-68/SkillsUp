@@ -1,11 +1,10 @@
 package HomeWork2;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
 //        В данном примере я намеренно ограничил значения для факториала
 //        и фибоначчи, меньше 2 нет смысла,
@@ -18,7 +17,7 @@ public class Main {
         tree();
     }
 
-    public static int getNumber() {
+    private static int getNumber() {
         int number = 0;
         boolean isValid = false;
         do {
@@ -35,7 +34,7 @@ public class Main {
         return number;
     }
 
-    public static void printFacktorial(int number) {
+    private static void printFacktorial(int number) {
         double result = 1;
         for (int count = 1; count <= number; count++) {
             result = (result * count);
@@ -43,7 +42,7 @@ public class Main {
         System.out.println("Факториал !" + number + " = " + result);
     }
 
-    public static void printFibonacci(int number) {
+    private static void printFibonacci(int number) {
         double[] arr = new double[number];
         arr[0] = 0;
         arr[1] = 1;
@@ -58,7 +57,7 @@ public class Main {
         }
     }
 
-    public static void tree() {
+    private static void tree() {
         String str = "*";
         for (int i = 10; i > 0; i--) {
             for (int j = 0; j < i; j++) {
