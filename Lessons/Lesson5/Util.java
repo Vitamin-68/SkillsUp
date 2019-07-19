@@ -50,7 +50,8 @@ public class Util {
     public static void removePersonFromCar(Person person, Car car) {
         boolean personRemoved = false;
         System.out.println("We need remove this person " + person.toString() + " from car");
-        for (int index = 0; index < car.getPerson().length; index++) {
+        for (int index = 0; index < car.getPerson().length || !personRemoved; index++) {
+            System.out.println("index = " + index);
             if (person.equals(car.getPerson()[index])) {
                 System.out.println("Person " + person.toString() + " war removed from car");
                 car.getPerson()[index - 1] = null;
