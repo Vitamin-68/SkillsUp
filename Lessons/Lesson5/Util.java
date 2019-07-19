@@ -32,12 +32,12 @@ public class Util {
         return false;
     }
 
-    public static void removePersonFromCar(int number, Car car){
-        if (number > 0 && number <= car.getPerson().length){
-            if (car.getPerson()[number-1] != null){
-                System.out.println("Person with name " + car.getPerson()[number-1].getName()
+    public static void removePersonFromCar(int number, Car car) {
+        if (number > 0 && number <= car.getPerson().length) {
+            if (car.getPerson()[number - 1] != null) {
+                System.out.println("Person with name " + car.getPerson()[number - 1].getName()
                         + " war removed from car");
-                car.getPerson()[number-1] = null;
+                car.getPerson()[number - 1] = null;
 
             } else {
                 System.out.println("This place is empty");
@@ -46,4 +46,22 @@ public class Util {
             System.out.println("You enter wrong number of place");
         }
     }
+
+    public static void removePersonFromCar(Person person, Car car) {
+        boolean personRemoved = false;
+        System.out.println("We need remove this person " + person.toString() + " from car");
+        for (int index = 0; index < car.getPerson().length; index++) {
+            if (person.equals(car.getPerson()[index])) {
+                System.out.println("Person " + person.toString() + " war removed from car");
+                car.getPerson()[index - 1] = null;
+                personRemoved = true;
+            }
+        }
+        if (!personRemoved) {
+                System.out.println("Person " + person.toString() + " not found in car");
+            }
+
+
+    }
+
 }
