@@ -43,19 +43,27 @@ public class Main {
     }
 
     private static void printFibonacci(int number) {
-        double[] arr = new double[number];
-        arr[0] = 0;
-        arr[1] = 1;
-
-        for (int index = 2; index < number; index++) {
-            arr[index] = arr[index - 1] + arr[index - 2];
-        }
-
-        System.out.println("Ряд Фибоначчи состоящий из " + number + " чисел:");
-        for (Double numbers : arr) {
-            System.out.println(numbers);
+        int var1 = 0, var2 = 1, var3;
+        System.out.println("Ряд Фибоначчи состоящий из " + number + " чисел:\n0\n1");
+        while (number-- > 2){
+            System.out.println(var3=var1+var2);
+            var1 = var2;
+            var2 = var3;
         }
     }
+
+//    private static void printFibonacci(int number) {
+//        double[] arr = new double[number];
+//        arr[0] = 0;
+//        arr[1] = 1;
+//        for (int index = 2; index < number; index++) {
+//            arr[index] = arr[index - 1] + arr[index - 2];
+//        }
+//        System.out.println("Ряд Фибоначчи состоящий из " + number + " чисел:");
+//        for (Double numbers : arr) {
+//            System.out.println(numbers);
+//        }
+//    }
 
     private static void tree() {
         String str = "*";

@@ -3,32 +3,30 @@ package HomeWork3;
 public class Main {
     public static void main(String[] args) {
 
-        Adresat adresat1 = new Adresat();
-        Adresat adresat2 = new Adresat("Alex", "Ivanov", "Programmer", "+38067-123-45-67");
+        Addressee addressee1 = new Addressee();
+        Addressee addressee2 = new Addressee("Alex", "Ivanov", "Programmer", "+38067-123-45-67");
 
-        System.out.println("\nObject adresat1:");
-        System.out.println(adresat1.toString());
-        System.out.println("\nObject adresat2:");
-        System.out.println(adresat2.toString());
-        outFieldToScreen(adresat2);
+        System.out.println("\nObject addressee1:");
+        System.out.println(addressee1.toString());
+        System.out.println("\nObject addressee2:");
+        System.out.println(addressee2.toString());
+        outFieldToScreen(addressee2);
 
-        adresat1.setName("Jonn");
-        adresat1.setFamilyName("Tailor");
-        adresat1.setSocialStatus("Unemployed");
-        adresat1.setNumberOfPhone("+38050-987-65-43");
+        addressee1.setName("Jonn");
+        addressee1.setFamilyName("Tailor");
+        addressee1.setSocialStatus("Unemployed");
+        addressee1.setNumberOfPhone("+38050-987-65-43");
 
-        System.out.println("\nObject adresat1 with new fields");
-        System.out.println(adresat1.toString());
-//         Запись этой же строки без метода toString() дает тот же результат,
-//         можно обойтись без добавления этого метода? Он добавляется по умолчанию при выводе?
-        outFieldToScreen(adresat1);
+        System.out.println("\nObject addressee1 with new fields");
+        System.out.println(addressee1);
+        outFieldToScreen(addressee1);
 
     }
-    public static void outFieldToScreen(Adresat adresat) {
-        System.out.println("Name: " + adresat.name);
-        System.out.println("Family name: " + adresat.familyName);
-        System.out.println("Social status: " + adresat.socialStatus);
-        System.out.println("Phone number: " + adresat.numberOfPhone);
+    public static void outFieldToScreen(Addressee addressee) {
+        System.out.println("Name: " + addressee.getName());
+        System.out.println("Family name: " + addressee.getFamilyName());
+        System.out.println("Social status: " + addressee.getSocialStatus());
+        System.out.println("Phone number: " + addressee.getNumberOfPhone());
 
     }
 }
