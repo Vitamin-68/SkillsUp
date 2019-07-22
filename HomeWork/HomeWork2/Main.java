@@ -10,7 +10,8 @@ public class Main {
 //        и фибоначчи, меньше 2 нет смысла,
 //        больше 100 - слишком огромное число в факториале, при 180 уже выход за double
         System.out.println("Введите значение для факториала,");
-        printFacktorial(getNumber());
+        int num = getNumber();
+        System.out.println("Факториал !" + num + " = " + factorial(num));
 
         System.out.println("Введите значение для ряда Фибоначчи,");
         printFibonacci(getNumber());
@@ -34,23 +35,32 @@ public class Main {
         return number;
     }
 
-    private static void printFacktorial(int number) {
-        double result = 1;
-        for (int count = 1; count <= number; count++) {
-            result = (result * count);
+    private static double factorial(int number) {
+        double result;
+        if (number == 1) {
+            return 1;
         }
-        System.out.println("Факториал !" + number + " = " + result);
+            result = number * factorial(number - 1);
+            return result;
     }
 
     private static void printFibonacci(int number) {
-        int var1 = 0, var2 = 1, var3;
-        System.out.println("Ряд Фибоначчи состоящий из " + number + " чисел:\n0\n1");
-        while (number-- > 2){
-            System.out.println(var3=var1+var2);
+        double var1 = 0, var2 = 1, var3;
+        System.out.println("Ряд Фибоначчи состоящий из " + number + " чисел:\n" + var1 + "\n" + var2);
+        while (number-- > 2) {
+            System.out.println(var3 = var1 + var2);
             var1 = var2;
             var2 = var3;
         }
     }
+
+//    private static void printFactorial(int number) {
+//        double result = 1;
+//        for (int count = 1; count <= number; count++) {
+//            result = (result * count);
+//        }
+//        System.out.println("Факториал !" + number + " = " + result);
+//    }
 
 //    private static void printFibonacci(int number) {
 //        double[] arr = new double[number];
