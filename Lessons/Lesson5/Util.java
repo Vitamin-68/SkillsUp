@@ -92,13 +92,7 @@ public class Util {
         System.out.println("Enter speed of car (km/h): ");
         double speed = scanner.nextDouble();
         System.out.println("Is car are electrical? (y/n): ");
-        boolean electric = scanner.nextLine().equalsIgnoreCase("y");
-//        Я не понимаю почему, но с первого раза считывание не происходит, поэтому пока сделал повтор
-//        Если ввод имени машины опустить после ввода года создания, то не будет ожидать и ввод имени.
-//        Такое ощущение чтоесли перед вводом текста был ввод цифр, то текст будет считываться
-//        со 2-го раза.
-        electric = scanner.nextLine().equalsIgnoreCase("y");
-        System.out.println("Enter power of engine: ");
+        boolean electric = scanner.next().equalsIgnoreCase("y");
         Engine engine = new Engine(scanner.nextInt());
         System.out.println("Enter quantity of passengers: ");
         Person[] person = new Person[scanner.nextInt()];
@@ -106,7 +100,8 @@ public class Util {
         int distance = scanner.nextInt();
         Car car = new Car(yearOfCreate, name, speed, electric, engine, person);
         System.out.println("Create object car " + car);
-        System.out.println("The car " + car.getName() + " will travel " + distance + " km in " + distance / speed + " hours");
+        System.out.println("The car " + car.getName() + " will travel " + distance + " km in "
+                + distance / speed + " hours");
         return car;
     }
 
