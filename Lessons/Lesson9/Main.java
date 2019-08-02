@@ -34,6 +34,7 @@ public class Main {
 
         numbers.add(animal);
         numbers.add(person);
+        System.out.println(array);
 
 
 

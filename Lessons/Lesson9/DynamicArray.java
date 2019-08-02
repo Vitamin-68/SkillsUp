@@ -1,5 +1,7 @@
 package Lesson9;
 
+import java.util.Arrays;
+
 public class DynamicArray<E> {
     private Object[] data;
     private int size;
@@ -11,5 +13,13 @@ public class DynamicArray<E> {
     public void add(E e) {
         data[size] = e;
         size++;
+    }
+
+    @Override
+    public String toString() {
+        return "DynamicArray{" +
+                "data=" + Arrays.toString(data) +
+                ", size=" + size +
+                '}';
     }
 }
