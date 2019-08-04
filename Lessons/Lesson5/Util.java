@@ -17,7 +17,7 @@ public class Util {
             for (int index = 0; index < car.getPerson().length; index++) {
                 if (car.getPerson()[index] == null && !isPersonInCar(person, car)) {
                     car.getPerson()[index] = person;
-                    System.out.println("This " + person.getName() + " was sitted in car");
+                    System.out.println("This " + person.getName() + " got into the car");
                     return;
                 }
             }

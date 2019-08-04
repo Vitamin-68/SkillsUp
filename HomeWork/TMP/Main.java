@@ -1,6 +1,8 @@
 package TMP;
 
 
+import java.lang.reflect.Array;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Main {
@@ -8,68 +10,55 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean exit = true;
-//        System.out.println("Enter number:");
-//        while (scanner.hasNextInt() != true){
-//            System.out.println("Enter right number");
-////            scanner.next();
-//        }
 
-        System.out.println("ID = " + findById(scanner));
+//        System.out.println("ID = " + findById(scanner));
+
+        SimpleClass obj1 = new SimpleClass(10, "Iv");
+        SimpleClass obj2 = new SimpleClass(20, "Ed");
+        SimpleClass obj3 = new SimpleClass(30, "Pit");
+        SimpleClass obj4 = new SimpleClass(40, "Ket");
+        SimpleClass obj5 = new SimpleClass(50, "Lex");
+
+
+        SimpleClass[] array = new SimpleClass[5];
+        array[0] = obj1;
+        array[1] = obj2;
+        array[2] = obj3;
+        array[3] = obj4;
+        array[4] = obj5;
+
+        for (SimpleClass i : array) {
+            System.out.println("index = " + i);
+            if (i != null && Objects.equals(i.getId(), 20)) {
+                System.out.println("Bingo!" + i + " - Deleted");
+                i = null;
+                System.out.println("i - " + i);
+//                array[1] = null;
+            }
+        }
+
+        for (SimpleClass i: array) {
+            System.out.println("index = " + i );
+        }
+
 
         System.out.println("End");
-//        do {
-//            System.out.println("first");
-//            if (scanner.hasNextInt()) {
-//                System.out.println("Enter number: " );
-//                if (scanner.nextInt() == 0) {
-//                    exit = false;
-//                    break;
-//                }
-//                System.out.println("After nextInt " + scanner);
-//
-//            } else {
-////                scanner.next();
-//
-//                System.out.println("Wrong number. Before next ");
-////                String name = scanner.next();
-////                String name2 = scanner.nextLine();
-//                System.out.println("Name - " + scanner.next());
-//
-//            }
-//
-//        } while (exit);
     }
 
     private static int findById(Scanner scanner) {
-        System.out.println("Enter id of contact (0-9)");
-//        if (scanner.hasNextInt() == true) {
-//            int id = scanner.nextInt();
-////            System.out.println("i  " + id);
-//            if (id > 0 && id <= 10) {
-//                return id;
-//            }
-//            id = scanner.nextInt();
-//        } while ()
-        int id;
-//        do {
-//            id = scanner.nextInt();
-//            System.out.println(id);
-//        }
-//        while (scanner.hasNextInt() != true & id >0);
 
-//        if (scanner.hasNextInt()) {
-            switch (scanner.nextInt()) {
-                case 1: {
-                    System.out.println(1);
-                    break;
+        for (; ; ) {
+            System.out.println("Enter id of contact (1-10)");
+            if (scanner.hasNextInt()) {
+                int id = scanner.nextInt();
+                if (id > 0 && id <= 10) {
+                    return id;
                 }
-                case 2: {
-                    System.out.println(2);
-                    break;
-                }
+            } else {
+                scanner.next();
+                System.out.println("You enter wrong number");
             }
-//        }
-        return 100;
+        }
     }
 
 }
