@@ -18,8 +18,7 @@ public class Main {
 
         System.out.println(pair.toString());
 
-        CustomPair <Person, Animal> pair2 = new CustomPair<>();
-        pair2.put(person2, animal2);
+        CustomPair <Person, Animal> pair2 = new CustomPair<>(person2, animal2);
         System.out.println(pair2);
 
         CustomPair <Person, Animal> pair3 = new CustomPair<>();
@@ -35,6 +34,7 @@ public class Main {
         numbers.add(animal);
         numbers.add(person);
         System.out.println(array);
+        System.out.println(numbers);
 
 
 
