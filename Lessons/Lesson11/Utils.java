@@ -1,5 +1,6 @@
 package Lesson11;
 
+
 import java.util.*;
 
 public class Utils {
@@ -7,7 +8,7 @@ public class Utils {
 
         Set<String> keys = rada.keySet();
         for (String key : keys) {
-            for (Deputy deputy :rada.get(key).getDeputies()) {
+            for (Deputy deputy : rada.get(key).getDeputies()) {
                 if (deputy.getName().equals(name)) {
                     deputy.setBribeTaker((true));
                     return;
@@ -30,11 +31,46 @@ public class Utils {
         List<Partia> partias = new ArrayList<>(rada.values());
         for (Partia partia : partias) {
             for (Deputy deputy : partia.getDeputies()) {
-                if (deputy.getName().equals(name)){
+                if (deputy.getName().equals(name)) {
                     deputy.setBribeTaker(true);
                     return;
                 }
             }
         }
+    }
+
+    public Map<String, Partia> getBribqToAllDeputy(Map<String, Partia> rada) {
+
+        Set<String> keys = rada.keySet();
+        for (String key : keys) {
+            for (Deputy deputy : rada.get(key).getDeputies()) {
+                takeBribe(rada, deputy.getName());
+            }
+        }
+        return rada;
+    }
+
+    public Map<String, Partia> removePartyIfAllBribeTakers(Map<String, Partia> rada) {
+
+        List<String> listForRemove = new ArrayList<>();
+        Set<String> keys = rada.keySet();
+        for (String key : keys) {
+            for (Deputy deputy : rada.get(key).getDeputies()) {
+                if (!deputy.isBribeTaker()) {
+                    break;
+                } else {
+                    if (rada.get(key).getDeputies().indexOf(deputy) == rada.get(key).getDeputies().size() - 1) {
+                        System.out.println("All deputy in " + key + " partia are bribes.\n" +
+                                "This partia will be removed.");
+                        listForRemove.add(key);
+                    }
+                }
+            }
+        }
+        for (String key : listForRemove) {
+            rada.remove(key);
+        }
+        System.out.println("Rada has " + rada.size() + " partia(-es)");
+        return rada;
     }
 }
