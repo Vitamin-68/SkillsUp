@@ -7,13 +7,13 @@ import java.util.stream.Stream;
 public class Main {
     public static void main(String[] args) {
         Funcinterface number = (k, m) -> k * m;
-        System.out.printf( "number.multiply(20, 5) = " + number.multiply( 20, 5 ) );
+        System.out.printf( "number.multiply(20, 5) = " + number.multiply( 20, 5 ) + "\n");
 
         Stream ints = Stream.builder().add( 2 ).add( 5 ).add( 8 ).build();
         Iterator<Integer> iterator = ints.iterator();
         List<String> strings = new ArrayList<>(
-                Arrays.asList( "first", "Second", "Third", "Fourth",
-                        "first", "Second", "Third", "Fourth" )
+                Arrays.asList( "First", "Second", "Third", "Fourth",
+                        "First", "Second", "Third", "Fourth" )
         );
 //        strings.stream().forEach( st-> {
 //            System.out.printf( "st+1 = " + st + 1 );

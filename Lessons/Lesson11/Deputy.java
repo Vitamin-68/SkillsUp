@@ -58,6 +58,6 @@ public class Deputy implements Comparable<Deputy> {
 
     @Override
     public int compareTo(Deputy o) {
-        return name.compareTo(o.getName());
+            return name.compareTo(o.getName());
     }
 }

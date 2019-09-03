@@ -5,7 +5,7 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Map<String, Partia> rada = new HashMap<>();
-        Set<Deputy> deputies = new TreeSet<>(new DeputyComperator());
+        Set<Deputy> deputies = new TreeSet<>(new DeputyComparator());
 
         Deputy deputy1 = new Deputy("deputy1", false);
         Deputy deputy2 = new Deputy("deputy2", false);
