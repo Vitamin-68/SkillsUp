@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="SkillsUp" />
         <module name="Vitamin-68" />
+        <module name="Vit" />
       </profile>
     </annotationProcessing>
   </component>
