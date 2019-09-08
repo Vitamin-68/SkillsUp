@@ -6,6 +6,7 @@ import java.util.Objects;
 
 public class Person implements Serializable {
 
+    private static final long serialVersionUID = 10L;
     private static final long serialNum = 5;
     private String firstName;
     private String lastName;
@@ -18,7 +19,7 @@ public class Person implements Serializable {
     public Person() {
     }
 
-    public Person(String firstName, String lastName, int age, double height, boolean married, LocalDate birthDay, LocalDate deadDeath) {
+    public Person(String firstName, String lastName, int age, double height, boolean married, LocalDate birthDay) { //}, LocalDate deadDeath) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
