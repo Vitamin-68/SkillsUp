@@ -1,4 +1,4 @@
-package Lesson14;
+package Lesson15;
 
 import java.io.DataOutputStream;
 import java.io.FileOutputStream;
@@ -36,7 +36,13 @@ public class Main {
         });
 
         Utils.writeListOfPeople(people);
+        try {
+            Utils.readPeopleFromFile();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
+        Utils.writeIntoFile(people);
         List<Person> secondList = Utils.getPersonListFromFile();
         secondList.forEach(System.out::println);
 
