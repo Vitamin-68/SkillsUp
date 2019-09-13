@@ -7,8 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="SkillsUp" />
-        <module name="Vitamin-68" />
         <module name="Vit" />
+        <module name="Vitamin-68" />
       </profile>
     </annotationProcessing>
   </component>

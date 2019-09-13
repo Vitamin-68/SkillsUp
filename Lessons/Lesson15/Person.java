@@ -11,22 +11,23 @@ public class Person implements Serializable {
     private String firstName;
     private String lastName;
     private int age;
+//    transient private int age;  transient - поле не сохраняется в файл, обязательно подлючать Serializable!
     private double height;
     private boolean married;
     private LocalDate birthDay;
-    private LocalDate deadDeath;
+    private LocalDate deadDate;
 
     public Person() {
     }
 
-    public Person(String firstName, String lastName, int age, double height, boolean married, LocalDate birthDay) { //}, LocalDate deadDeath) {
+    public Person(String firstName, String lastName, int age, double height, boolean married, LocalDate birthDay) { //}, LocalDate deadDate) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.height = height;
         this.married = married;
         this.birthDay = birthDay;
-        this.deadDeath = deadDeath;
+        this.deadDate = deadDate;
     }
 
     public static long getSerialNum() {
@@ -81,12 +82,12 @@ public class Person implements Serializable {
         this.birthDay = birthDay;
     }
 
-    public LocalDate getDeadDeath() {
-        return deadDeath;
+    public LocalDate getDeadDate() {
+        return deadDate;
     }
 
-    public void setDeadDeath(LocalDate deadDeath) {
-        this.deadDeath = deadDeath;
+    public void setDeadDate(LocalDate deadDate) {
+        this.deadDate = deadDate;
     }
 
     @Override
@@ -100,12 +101,12 @@ public class Person implements Serializable {
                 Objects.equals( firstName, person.firstName ) &&
                 Objects.equals( lastName, person.lastName ) &&
                 Objects.equals( birthDay, person.birthDay ) &&
-                Objects.equals( deadDeath, person.deadDeath );
+                Objects.equals(deadDate, person.deadDate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash( firstName, lastName, age, height, married, birthDay, deadDeath );
+        return Objects.hash( firstName, lastName, age, height, married, birthDay, deadDate);
     }
 
     @Override

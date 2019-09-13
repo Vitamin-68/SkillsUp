@@ -34,6 +34,7 @@ public class Utils {
         FileInputStream fileInputStream = new FileInputStream("peopleObject.txt");
         ObjectInputStream inputStream = new ObjectInputStream(fileInputStream);
         List<Person> people = (List<Person>) inputStream.readObject();
+        inputStream.close();
 
         people.forEach(System.out::println);
     }
