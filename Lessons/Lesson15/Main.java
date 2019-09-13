@@ -46,5 +46,7 @@ public class Main {
         List<Person> secondList = Utils.getPersonListFromFile();
         secondList.forEach(System.out::println);
 
+//            Utils.test();
+
     }
 }

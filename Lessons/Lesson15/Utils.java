@@ -71,4 +71,27 @@ public class Utils {
         });
         return people;
     }
+
+    static void test() {
+        File file = new File("Новый текстовый документ.txt");
+        System.out.println("af" + file.getAbsoluteFile());
+        System.out.println("ap" + file.getAbsolutePath());
+        try {
+            System.out.println("cp" + file.getCanonicalPath());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            FileInputStream fileInputStream = new FileInputStream(file);
+            int number = -1;
+            StringBuilder sBuilder = new StringBuilder();
+            while ((number = fileInputStream.read()) != -1) {  // -1 end of file
+                sBuilder.append((char) number);
+            }
+            System.out.println(sBuilder.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
