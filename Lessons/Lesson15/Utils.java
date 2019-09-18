@@ -4,6 +4,7 @@ import java.io.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class Utils {
     private static final String FIRST_NAME = "First Name: ";
@@ -40,6 +41,12 @@ public class Utils {
     }
 
     static void writeListOfPeople(List<Person> people) throws IOException {
+        FileOutputStream fileOutputStream = new FileOutputStream("peopleObject.txt");
+        ObjectOutputStream outputStream = new ObjectOutputStream(fileOutputStream);
+        outputStream.writeObject(people);
+        outputStream.close();
+    }
+    static void writeListOfPeople2(Set<Person> people) throws IOException {
         FileOutputStream fileOutputStream = new FileOutputStream("peopleObject.txt");
         ObjectOutputStream outputStream = new ObjectOutputStream(fileOutputStream);
         outputStream.writeObject(people);

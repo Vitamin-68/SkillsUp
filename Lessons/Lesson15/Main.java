@@ -4,9 +4,7 @@ import java.io.DataOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -41,6 +39,7 @@ public class Main {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+
 
         Utils.writeIntoFile(people);
         List<Person> secondList = Utils.getPersonListFromFile();
